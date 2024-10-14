@@ -25,12 +25,13 @@ SECRET_KEY = 'django-insecure-wz+lxhkmt^k^$3hdl@9aqp4m#dbtzbtx_e^(q83iravl)7%yul
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    'shop.apps.ShopConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -75,9 +76,13 @@ WSGI_APPLICATION = 'navi_test.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'navi_test_shop',
+        'USER': 'navi_shop_admin',
+        'PASSWORD': 'B33pB00p!',
+        'HOST': 'localhost',
+        'PORT': '5432',
+        }
 }
 
 
